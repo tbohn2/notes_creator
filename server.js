@@ -5,6 +5,7 @@ const PORT = 3001;
 const fs = require('fs');
 
 app.use(express.static('public'));
+app.use(express.json());
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -17,6 +18,12 @@ app.get('/notes', (req, res) =>
 app.get('/api/notes', (req, res) => {
     const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     return res.json(notes);
+});
+
+app.post('/api/notes', (req, res) => {
+    const newNote = (req.body);
+    console.log(newNote);
+    res.send(req.body)
 });
 
 app.get('*', (req, res) =>
