@@ -22,8 +22,12 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     const newNote = (req.body);
-    console.log(newNote);
-    res.send(req.body)
+    const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+    notes.push(newNote)
+    fs.writeFile('db/db.json', JSON.stringify(notes), (err) =>
+        err ? console.log(err) : console.log('db.json updated')
+    )
+    // return res.json(notes)
 });
 
 app.get('*', (req, res) =>
