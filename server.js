@@ -26,10 +26,10 @@ app.post('/api/notes', (req, res) => {
     newNote.id = uuidv4()
     const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     notes.push(newNote)
-    fs.writeFile('db/db.json', JSON.stringify(notes), (err) =>
+    fs.writeFile('db/db.json', JSON.stringify(notes, null, 4), (err) =>
         err ? console.log(err) : console.log('db.json updated')
     )
-    // return res.json(notes)
+    res.json(newNote)
 });
 
 app.get('*', (req, res) =>
