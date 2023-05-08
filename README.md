@@ -16,8 +16,6 @@ N/A
   
 N/A
 
-## Repository and Website URL
-
 ## Installation
 
 This application is deployed on herokuapp.com; no installs are required.
@@ -28,9 +26,11 @@ Node.js must be installed for application to function. Instructions can be found
 
 Express.js must be installed following instructions at https://expressjs.com/en/starter/installing.html.
 
-https://github.com/tbohn2/notes_creator
+## Repository and Website URL
 
-https://notes-creator6000.herokuapp.com/
+Repository: https://github.com/tbohn2/notes_creator
+
+Deployed Application: https://notes-creator6000.herokuapp.com/
 
 ![notes-creator6000 herokuapp com_](https://user-images.githubusercontent.com/124842865/236728877-0db4c6bb-75bc-4253-814b-38b67cc6430b.png)
 
